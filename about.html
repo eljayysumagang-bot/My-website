@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>About - My Website</title>
+
+  <!-- ✅ Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -18,14 +22,16 @@
 
     /* Navigation */
     .nav {
+      display: flex;
+      flex-wrap: wrap;
       background: #333;
-      overflow: hidden;
     }
 
     .nav a {
-      float: left;
+      flex: 1;
+      text-align: center;
       color: white;
-      padding: 14px 20px;
+      padding: 14px;
       text-decoration: none;
     }
 
@@ -39,15 +45,38 @@
       padding: 20px;
     }
 
+    /* Card style */
+    .card {
+      background: #f9f9f9;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
     /* Footer */
     .footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      position: relative;
+    }
+
+    /* 📱 Mobile adjustments */
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .nav a {
+        flex: 100%;
+        border-top: 1px solid #444;
+      }
+
+      .container {
+        padding: 15px;
+      }
     }
   </style>
 </head>
@@ -62,25 +91,33 @@
 
   <!-- Navigation -->
   <div class="nav">
-    <a href="index.html">Home</a>
+    <a href="main.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
 
   <!-- Content -->
   <div class="container">
-    <h2>Who is me</h2>
-    <p>This is my website I create.</p>
 
-    <h3>Our Goal</h3>
-    <p>To learn about HTML.</p>
+    <div class="card">
+      <h2>Who am I</h2>
+      <p>This is my website that I created while learning web development.</p>
+    </div>
 
-    <h3>Skills Used</h3>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <div class="card">
+      <h3>My Goal</h3>
+      <p>To learn HTML, CSS, and JavaScript and build real websites.</p>
+    </div>
+
+    <div class="card">
+      <h3>Skills Used</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+
   </div>
 
   <!-- Footer -->
